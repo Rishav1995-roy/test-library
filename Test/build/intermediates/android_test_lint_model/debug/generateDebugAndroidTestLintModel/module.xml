@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/Users/fci-ma2076/Documents/projects/T/Test"
+    name=":Test"
+    type="LIBRARY"
+    maven="T:Test:unspecified"
+    agpVersion="8.5.0"
+    buildFolder="build"
+    bootClassPath="/Users/fci-ma2076/Library/Android/sdk/platforms/android-34/android.jar:/Users/fci-ma2076/Library/Android/sdk/build-tools/34.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>

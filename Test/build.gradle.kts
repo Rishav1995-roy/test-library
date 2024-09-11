@@ -1,18 +1,9 @@
 plugins {
+    id("maven-publish")
     alias(libs.plugins.android.library)
 }
 
 android {
-    namespace = "com.Test"
-    compileSdk = 34
-
-    defaultConfig {
-        minSdk = 21
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -22,6 +13,17 @@ android {
             )
         }
     }
+
+    namespace = "com.Test"
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 21
+        lint.targetSdk = 35
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -35,4 +37,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "io.github.Rishav1995-roy"
+            artifactId = "test-library"
+            version = "1.0.3"
+            // Use assembleRelease to create the AAR
+            artifact("${layout.buildDirectory}/outputs/aar/${project.name}-release.aar")
+        }
+    }
+    repositories {
+        maven {
+            url = uri("file://${rootProject.projectDir}/repo") // Local Maven repo
+        }
+    }
 }

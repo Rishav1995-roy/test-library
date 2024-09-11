@@ -44,7 +44,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "io.github.Rishav1995-roy"
             artifactId = "test-library"
-            version = "1.0.3"
+            version = "1.0.4"
             // Use assembleRelease to create the AAR
             artifact("${layout.buildDirectory}/outputs/aar/${project.name}-release.aar")
         }

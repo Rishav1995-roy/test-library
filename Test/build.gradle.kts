@@ -50,8 +50,6 @@ publishing {
         }
     }
     repositories {
-        maven {
-            url = uri("file://${rootProject.projectDir}/repo") // Local Maven repo
-        }
+        mavenLocal() // Local Maven repository
     }
 }

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.Test-release-30:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.Test-core-1.13.0-17:/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.Test-release-30:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.Test-core-1.13.0-17:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.Test-release-30:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.Test-core-1.13.0-17:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "com.Test-release-30:/layout-v21/notification_action.xml",
+        "source": "com.Test-core-1.13.0-17:/layout-v21/notification_action.xml"
+    }
+]

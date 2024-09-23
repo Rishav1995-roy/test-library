@@ -1,11 +1,12 @@
 plugins {
-    id("maven-publish")
     alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    id("maven-publish")
 }
 
 android {
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -39,18 +40,16 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("release") {
-            groupId = "io.github.Rishav1995-roy"
-            artifactId = "test-library"
-            version = "1.0.5"
-            // Use assembleRelease to create the AAR
-            artifact("${layout.buildDirectory}/outputs/aar/Test-release.aar")
-
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "com.Test"
+                artifactId = "Test"
+                version = "1.0.6"
+                from(components["release"])
+            }
         }
     }
-    repositories {
-        mavenLocal() // Local Maven repository
-    }
 }
+

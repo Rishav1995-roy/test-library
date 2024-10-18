@@ -4,18 +4,23 @@ package com.Test;
 import android.content.Context;
 import android.widget.Toast;
 
-class ToastClass {
-    private final String url;
-    private final String endPoint;
+public class ToastClass {
+    private String url;
+    private String endPoint;
+    private String message;
 
-    public ToastClass() {
+    private ToastClass() {
         ConfigClass c = new ConfigClass();
         url = c.getUrl();
         endPoint = c.getEndPoint();
     }
 
+    public ToastClass(String message) {
+        this.message = message;
+    }
+
     public void showToastMessage(Context c) {
-        Toast.makeText(c,url+endPoint, Toast.LENGTH_SHORT).show();
+        Toast.makeText(c,message, Toast.LENGTH_SHORT).show();
     }
 
 }

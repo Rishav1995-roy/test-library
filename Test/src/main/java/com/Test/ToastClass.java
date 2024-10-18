@@ -4,9 +4,13 @@ package com.Test;
 import android.content.Context;
 import android.widget.Toast;
 
-public class ToastClass {
+class ToastClass {
 
-    public void showToastMessage(String message, Context c) {
+    private void showToastMessage(String message, Context c) {
         Toast.makeText(c,message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void showTest(String message, Context c) {
+        showToastMessage(message, c);
     }
 }

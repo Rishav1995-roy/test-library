@@ -5,12 +5,17 @@ import android.content.Context;
 import android.widget.Toast;
 
 class ToastClass {
+    private final String url;
+    private final String endPoint;
 
-    private void showToastMessage(String message, Context c) {
-        Toast.makeText(c,message, Toast.LENGTH_SHORT).show();
+    public ToastClass() {
+        ConfigClass c = new ConfigClass();
+        url = c.getUrl();
+        endPoint = c.getEndPoint();
     }
 
-    public void showTest(String message, Context c) {
-        showToastMessage(message, c);
+    public void showToastMessage(Context c) {
+        Toast.makeText(c,url+endPoint, Toast.LENGTH_SHORT).show();
     }
+
 }
